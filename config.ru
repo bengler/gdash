@@ -1,7 +1,7 @@
 $: << File.join(File.dirname(__FILE__), "lib")
 
 require 'bundler/setup'
-
+require File.expand_path('config/site.rb') if File.exists?('config/site.rb')
 require 'gdash'
 
 set :run, false
