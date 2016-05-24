@@ -11,8 +11,7 @@ RUN bundle install --jobs 4 --deployment --without test:development
 
 # Set up application
 COPY . .
-RUN chown gdash config/ \
-  && mkdir templates
+RUN chown gdash config && mkdir templates
 
 # Run application
 USER gdash
