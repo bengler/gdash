@@ -16,7 +16,7 @@ GEM
     kgio (2.10.0)
     less (2.2.1)
       commonjs (~> 0.2.6)
-    libv8 (3.16.14.13)
+    libv8 (3.16.14.15)
     multi_json (1.7.2)
     rack (1.6.4)
     rack-protection (1.2.0)
