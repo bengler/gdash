@@ -1,0 +1,35 @@
+:graphite: <%= ENV['GRAPHITE_URL'] %>
+:templatedir: /srv/gdash/templates
+:options:
+  :title: <%= ENV['GDASH_TITLE'] || 'GDash' %>
+  :prefix: ""
+  :refresh_rate: 300
+  :graph_columns: 2
+  :graph_width: 500
+  :graph_height: 300
+  :interval_filters:
+    - :label: Hour
+      :from: -1hour
+    - :label: 8 Hours
+      :from: -8hour
+    - :label: Day
+      :from: -1day
+    - :label: Week
+      :from: -1week
+    - :label: Month
+      :from: -1month
+    - :label: Quarter
+      :from: -3month
+    - :label: Half Year
+      :from: -6month
+    - :label: Year
+      :from: -1year
+  :intervals:
+    - [ "-1hour", "Hour" ]
+    - [ "-8hour", "8 Hours" ]
+    - [ "-1day", "Day" ]
+    - [ "-1week", "Week" ]
+    - [ "-1month", "Month" ]
+    - [ "-3month", "Quarter" ]
+    - [ "-6month", "Half Year" ]
+    - [ "-1year", "Year" ]
