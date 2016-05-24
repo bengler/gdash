@@ -4,7 +4,6 @@ gem 'redcarpet'
 gem 'less'
 gem 'therubyracer'
 gem 'json'
-gem 'airbrake'
 gem 'rake'
 gem 'unicorn'
 gem 'graphite_graph', "~>0.0.8"
