@@ -1,4 +1,4 @@
-FROM docker.bengler.no/app:16.04-node5.11-ruby2.3
+FROM docker.bengler.no/app:16.04-node5.11-python3.5-ruby2.3
 MAINTAINER Erik Grinaker <erik@bengler.no>
 
 # Set up environment
