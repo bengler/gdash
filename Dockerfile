@@ -2,7 +2,7 @@ FROM docker.bengler.no/app:16.04-node5.11-python3.5-ruby2.3
 MAINTAINER Erik Grinaker <erik@bengler.no>
 
 # Set up environment
-RUN useradd --create-home --home-dir /srv/gdash --shell /bin/bash gdash
+RUN useradd -md /srv/gdash -s /bin/bash gdash
 WORKDIR /srv/gdash
 
 # Install gems (done separately to cache built gems)
