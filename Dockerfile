@@ -16,4 +16,5 @@ RUN chown gdash config && mkdir templates
 # Run application
 USER gdash
 EXPOSE 8080
+ENTRYPOINT ["./docker.sh"]
 CMD ["bundle", "exec", "unicorn", "-c", "config/unicorn.rb"]
