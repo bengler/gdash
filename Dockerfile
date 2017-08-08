@@ -1,9 +1,4 @@
-FROM docker.bengler.no/app:16.04-go1.6-node5.11-python3.5-ruby2.3
-MAINTAINER Erik Grinaker <erik@bengler.no>
-
-# Set up environment
-RUN useradd -md /srv/gdash -s /bin/bash gdash
-WORKDIR /srv/gdash
+FROM eu.gcr.io/benglercloud/ruby:2.3
 
 # Install gems (done separately to cache built gems)
 COPY Gemfile Gemfile.lock ./
@@ -11,10 +6,10 @@ RUN bundle install --jobs 4 --deployment --without test:development
 
 # Set up application
 COPY . .
-RUN chown gdash config && mkdir templates
+RUN mkdir templates \
+  && chown -R app:app .
 
 # Run application
-USER gdash
 EXPOSE 8080
-ENTRYPOINT ["./docker.sh"]
-CMD ["bundle", "exec", "unicorn", "-c", "config/unicorn.rb"]
+ENTRYPOINT ["docker/entrypoint"]
+CMD ["gosu", "app", "bundle", "exec", "unicorn", "-c", "config/unicorn.rb"]
